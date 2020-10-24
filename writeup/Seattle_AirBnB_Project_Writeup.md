@@ -1,9 +1,11 @@
 # Seattle AirBnB Project Writeup
 
-## Project Overview
+## 1. Project Overview
 This is a project that I felt would be relatively simple, but that turned out to be much more involved. While I have done several machine learning projects before this was the first time that I had such a high number of features that I couldn't practically dive deep on each one individually. This gave me valuable experience in coming up with strategies to deal with large numbers of features and prioritizing the methods to deal with them efficiently, while still maintaining some time constraints for the project. 
 
 The goal of this project was to take an AirBnB dataset for all of the properties in Seattle, Washington 2016 and use it to answer 3 questions about the data and then come up with a predictive model for a feature of the data. 
+
+__Visit the [Github repo](https://github.com/Starplatinum87/AirBnB_Seattle_Project) to see the data, code and notebooks used in the project.__ 
 
 ### Data
 
@@ -30,7 +32,7 @@ My questions and modeling focused on the property listings, so I didn't end up u
 
 My predictive model will attempt to predict the mean occupancy rate for a given property listing for the year. The independent variables will be details about the listing,  primarily from the listings dataset.
 
-## Data Processing
+## 2. Data Processing
 
 It's often said about 70-80% of an analysts' time is spent in the data processing phase and that was certainly the case for this project. I'll cover the highlights.
 
@@ -91,7 +93,7 @@ In a number of cases features were simply removed from the dataset:
 ![](images/Screen Shot 2020-10-20 at 1.11.02 PM.png)
 
 
-## Feature Engineering
+## 3. Feature Engineering
 
 There were a good amount of opportunities for simple feature engineering in this project that ended up being quite useful for the final model. The approaches I took were:
 
@@ -107,11 +109,11 @@ There were a good amount of opportunities for simple feature engineering in this
 
   <img src="/Users/starplatinum87/Google Drive/DATA_SCIENCE/Courses/Udacity - Data Science Nanodegree/AirBnB_Seattle_Project/writeup/images/Screen Shot 2020-10-21 at 12.48.40 PM.png" style="zoom: 67%;" />
 
-## Final Dataset
+## 4. Final Dataset
 
-The final dataset I ended up using was the **`listings`** dataset with all of the modifications above, and the target, the calculatd annual occupancy rate, added from the calendar dataset. With the encoding of categoricals and dropping of columns and rows the final set had **3816 rows and 148 columns**, compared to starting with 3818 rows and 92 columns. 
+The final dataset I ended up using was the **`listings`** dataset with all of the modifications above, and the target, the calculated annual occupancy rate, added from the calendar dataset. With the encoding of categoricals and dropping of columns and rows the final set had **3816 rows and 148 columns**, compared to starting with 3818 rows and 92 columns. 
 
-## Questions to Answer
+## 5. Questions to Answer
 
 ### Q1: What is the overall occupancy in Seattle over the course of the year? 
 
@@ -232,7 +234,7 @@ Pricing may be a factor in occupancy so it would be good to see what the relatio
    - The histogram indicates that neighborhood occupancy is relatively normally distributed. 
    - There seems to be no relationship between neighborhood occupancy and listing price. 
 
-## Modeling 
+## 6. Modeling 
 
 The modeling process ended up being the most straightforward step. The goal was to **create a model that can best predict the annual mean occupancy rate of a particular listing for AirBnB listings in Seattle.**
 
@@ -355,9 +357,7 @@ This is **the best MSE of all of the models I produced: 0.0992**. This is a **15
 
 It is also the **slowest to fit**. This fit time is not a huge concern for this project, but it could be for a much larger dataset and model when you try to put it into production. 
 
-
-
-## Test with Best Model
+### Test with Best Model
 
 Random forests performed the best so I tested the held out testing data to see what score it could get on prediction. Generally, **it's not unusual to see a massive drop in performance when going from training to testing**, but that **fortunately was not the case here.**
 
@@ -370,7 +370,7 @@ Random forests performed the best so I tested the held out testing data to see w
 
 This is **surprisingly excellent performance on test** with an **MSE of 0.0994**, compared to **0.0992 on validation**. This is a **loss in performance of only  0.2%, which is pretty impressive**, considering how much performance can normally drop. 
 
-## Feature Importances
+### Feature Importances
 
 Random forests allow us to see the relative importance of each features, which is often the thing we are most interested in with a project.
 
@@ -392,10 +392,16 @@ Seeing the bottom 20 features can be helpful as well.
 - These results are similarly insightful and interesting. Amongst the features of the lowest importance are many of the neighborhoods. Though I suspect these are the neighborhoods that have the lowest occupancy, the fact that neighborhoods are not in the top 20 reinforces that they perhaps aren't a major factor in determining whether or not a property is occupied. 
 - Also property types of various kinds are either low importance or low priority. 
 
-## Modeling Conclusions
+## 7. Modeling Conclusions
 
 - In the end **random forests had the best model performance** of all of the modeling techniques tried. Random forests tend to perform quite well on more complex modeling tasks, so this isn't terribly surprising. It also generates useful outputs like feature importance, which can be a very important component of a project. 
 - We ended up with a final **mean squared error on test of 0.0994**, which was **~15.62% better than baseline** and only **0.2% worse than validation**, which means that the model is likely **highly generalizable** to new data with the same features. 
 - While random forests did generate the best model in terms of predictive power, it was the **worst in terms of performance**. This is not a major concern for this project, but must always be considered. 
 - In terms of feature importances **many of the engineered features ended up being in the top features in terms of relevance to the model**. This shows how important feature engineering can be to a project. 
 - While I did explore a number of algorithms and dug in on a few, there are many more that could be employed and we could go much deeper on techniques of optimizing, refining and combining them to get even better performance. 
+- This Mean Squared Error of 0.0994 means that, considering that a single listing can have an occupancy rate of 0 (no one stays at the listing over the entire year) to 1.0 (the listing is rented for every day of the year) that **on average our prediction of occupancy rate will, on average, be off by 9.94%**. Certainly better than being off by the baseline of 11.78%, but there is definitely room for improvement. 
+
+## 8. Resources
+
+- [GitHub Repository](https://github.com/Starplatinum87/TLJ_NLP_Sentiment_Topics) - GitHub repository containing all code, notebooks and data.
+
