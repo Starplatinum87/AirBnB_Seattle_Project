@@ -76,27 +76,27 @@ My predictive model will attempt to predict the mean occupancy rate for a given 
 
 ### File Tree
 
-├── README.md
-├── data
-│   ├── calendar.csv
-│   ├── listings.csv
-│   ├── pickles
-│   │   ├── calendar_munged.pkl
-│   │   ├── listings_munged.pkl
-│   │   ├── listings_munged2.pkl
-│   │   └── reviews_munged.pkl
-│   └── reviews.csv
-├── notebooks
-│   ├── airbnb_seattle_data_processing.ipynb
-│   ├── airbnb_seattle_data_processing_2.ipynb
-│   ├── airbnb_seattle_datasets.ipynb
-│   ├── airbnb_seattle_key_questions.ipynb
-│   └── airbnb_seattle_modeling.ipynb
-├── scripts
-│   └── airbnb_functions.py
-└── writeup
-    ├── Seattle_AirBnB_Project_Writeup.md
-    └── images
+├── README.md  
+├── data  
+│   ├── calendar.csv  
+│   ├── listings.csv  
+│   ├── pickles  
+│   │   ├── calendar_munged.pkl  
+│   │   ├── listings_munged.pkl  
+│   │   ├── listings_munged2.pkl  
+│   │   └── reviews_munged.pkl  
+│   └── reviews.csv  
+├── notebooks  
+│   ├── airbnb_seattle_data_processing.ipynb  
+│   ├── airbnb_seattle_data_processing_2.ipynb  
+│   ├── airbnb_seattle_datasets.ipynb  
+│   ├── airbnb_seattle_key_questions.ipynb  
+│   └── airbnb_seattle_modeling.ipynb  
+├── scripts  
+│   └── airbnb_functions.py  
+└── writeup  
+    ├── Seattle_AirBnB_Project_Writeup.md  
+    └── images     
 
 ### File Descriptions
 
