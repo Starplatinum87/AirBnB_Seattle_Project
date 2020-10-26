@@ -35,42 +35,33 @@ My questions and modeling focused on the property listings, so I didn't end up u
 
 My predictive model will attempt to predict the mean occupancy rate for a given property listing for the year. The independent variables will be details about the listing,  primarily from the listings dataset.
 
-## Project Conclusions
+## Project Summary
 
-### 3 Key Questions: Conclusions
+### 3 Key Questions
 
 1. **What is the overall occupancy trend in Seattle over the course of the year?** 
-   -  There are three distinct periods where we see a dramatic buildup of reservations followed by a leveling off: spring break, July 4th/early summer, and New Year's.
-   -  The New Year's spike is the largest and there is a dramatic drop right before New Year's. 
-   -  New Year's is the time we see the greatest spike in occupancy for AirBnB in Seattle, as occupancy never gets close to that level throughout the rest of the year. 
+
+   There are three distinct periods where we see a dramatic buildup of reservations followed by a leveling off: spring break, July 4th/early summer, and New Year's.
+
 2. **Does it pay to be a Superhost? How do the occupancy, prices and reviews of Superhosts compare to normal hosts?**
-   - The occupancy rates of Superhosts and hosts are very close to each other, but the mean price of a Superhost listing is notably higher than that of a normal host, about 8% higher.
-   - The higher mean listing price for Superhosts does not seem attributable to outliers skewing the metric. 
-   - Base on this preliminary analysis it appears that Superhosts tend to earn more with their listings than normal hosts, so it may be worth it to attempt to achieve that status. Further study is needed however.
+
+   Base on this preliminary analysis it appears that Superhosts tend to earn more with their listings than normal hosts, so it may be worth it to attempt to achieve that status. 
+
 3. **What neighborhoods have the highest occupancy rates?**
-   - The specific neighborhoods with the highest occupancy are:
-     - North College Park
-     - South Lake Union
-     - South Beacon Hill
-     - Broadway
-     - North Beach/Blue Ridge
-   - This is useful information to have, as it can be the basis for further exploration into specific details of these neighborhoods that leads to their occupancy rates, but that is outside the scope of this analysis. 
-   - We have per neighborhood occupancy clustering around 30% over the course of the year with some clear outliers on the high end and low end. So  there is definitely a difference between different neighborhoods in terms of occupancy, but most hover in the 20-40% range. 
-   - The histogram indicates that neighborhood occupancy is relatively normally distributed. 
-   - There seems to be no relationship between neighborhood occupancy and listing price. 
+
+   There are clear higher and lower annual occupancy neighborhoods in the Seattle area. These differences don't seem attributable to differences in rental prices, so the reasons for the differences are areas for additional analysis. 
 
 ### Modeling Conclusions
 
-- In the end, of the algorithms used (Lasso, Ridge, Support Vector Machines, Random Forests) **random forests had the best model performance** of all of the modeling techniques tried. Random forests tend to perform quite well on more complex modeling tasks, so this isn't terribly surprising. It also generates useful outputs like feature importance, which can be a very important component of a project. 
-- We ended up with a final **mean squared error on test of 0.0994**, which was **~15.62% better than baseline** (0.1178) and only **0.2% worse than validation** (0.0992), which means that the model is likely **highly generalizable** to new data with the same features. 
-- While random forests did generate the best model in terms of predictive power, it was the **worst in terms of performance**. This is not a major concern for this project, but must always be considered. 
-- In terms of feature importances **many of the engineered features ended up being in the top features in terms of relevance to the model**. This shows how important feature engineering can be to a project. 
-- This Mean Squared Error of 0.0994 means that, considering that a single listing can have an occupancy rate of 0 (no one stays at the listing over the entire year) to 1.0 (the listing is rented for every day of the year) that **on average our prediction of occupancy rate will, on average, be off by 9.94%**. Certainly better than being off by the baseline of 11.78%, but there is definitely room for improvement. 
+Random forests had the best model performance of all of the modeling techniques attempted. It's prediction was ~15.62% better than the baseline prediction and there was only a 0.2% loss in predictive performance on test vs validation, which means that the model is likely highly generalizable to new data with the same features. 
+
+However, random forests was the worst in terms of processing performance, taking many times longer to generate the model. 
 
 ## Future Work
 
-* There are many different ways this data could be used and explored, but for the 3 questions I'm currently satisfied with the analysis as it is currently.
-* However, for the machine learning prediction there is definitely room to improve on the current performance. If I were to continue this project the next steps would include exploring gradient boosted algorithms, especially XGBoost and related approaches, as they have proven to be both performant both in terms of model prediction and in terms of processing overhead. 
+There are many different ways this data could be used and explored, but for the 3 questions I'm currently satisfied with the analysis as it is currently.
+
+However, for the machine learning prediction there is definitely room to improve on the current performance. If I were to continue this project the next steps would include exploring gradient boosted algorithms, especially XGBoost and related approaches, as they have proven to be both performant both in terms of model prediction and in terms of processing overhead. 
 
 ## [Project Repository](https://github.com/Starplatinum87/AirBnB_Seattle_Project) 
 
