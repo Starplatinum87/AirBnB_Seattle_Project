@@ -1,5 +1,9 @@
 # Seattle AirBnB Project Writeup
 
+![](images/seattle_skyline_4_milkovi-skUTVJi8-jc-unsplash.jpg)
+
+
+
 ## 1. Project Overview
 This is a project that I felt would be relatively simple, but that turned out to be much more involved. While I have done several machine learning projects before this was the first time that I had such a high number of features that I couldn't practically dive deep on each one individually. This gave me valuable experience in coming up with strategies to deal with large numbers of features and prioritizing the methods to deal with them efficiently, while still maintaining some time constraints for the project. 
 
